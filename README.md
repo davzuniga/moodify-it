@@ -1,10 +1,10 @@
 # MoodifyIt !
 
-#### Setup
+### Can't decide on a color, or want to explore additional options as you go through mood boards in your designs? 
 
-Create three components: Form, ColorList, and SingleColor.
+MoodifyIt is here to help. 
 
-In the App component, render the Form and ColorList components.
+
 
 #### Form Component
 
