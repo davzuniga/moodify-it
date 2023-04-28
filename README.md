@@ -2,131 +2,55 @@
 
 ### Can't decide on a color, or want to explore additional options as you go through mood boards in your designs? 
 
-##MoodifyIt is here to help. 
+### [MoodifyIt is here to help.](https://moodifyit.netlify.app) 
 
+<br/>
 
+## About this Project
 
-#### Form Component
+MoodiFy It is a quick, one day project that I wanted to put together with the intention of showing beginner developers that even a simple idea that already exists can be re-targeted (and marketed!) as a powerful solution for a specific segment in big industries. 
 
-In the Form component, set up a color state value and a form with an two input fields (color and text). Set up a handleChange function to update the color state value and a handleSubmit function to add the color to the list.
-
-[HTML Color Input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
-
-#### Values.js
-
-Install the values.js library and use it to generate a list of colors in the App component.
-
-[Values.js Library](https://github.com/noeldelgado/values.js/blob/master/README.md)
-
-```sh
-npm i values.js
+The main goal behind this project was not to showcase technical skills, but since this is GitHub, I will share the stack of tools that were used in this project:
 
 ```
-
-```js
-import Values from 'values.js';
-new Values('#f15025').all(10);
+React (with a Vite template, because of speed!)
+Values.js library
+React Toastify library
 ```
 
-#### Render Colors
+And that's it! You can learn more about [Values.Js here](https://github.com/noeldelgado/values.js/blob/master/README.md), and about [Toastify in here](https://fkhadra.github.io/react-toastify/introduction).
 
-Pass the colors list to the ColorList component.
+There's really nothing about MoodiFy it that doesn't already exist online (and probably with tons of improvements over the IDEA), but the main key is to make users feel: a) understood, b) welcomed, and c) effective.
 
-In the ColorList component, iterate over the list of colors and render each one in a SingleColor component. Fix the key problem by providing a unique id for each color.
+When targeted as a specific tool to help with a specific issue, your apps become effective. A vague tool that requires login and can do a thousand things is very impressive to develop (and to possibly showcase some skills), but the key to succeed in interviews and as an entrepreneur is to create things that can be used from day-zero. Then you build upon them. 
 
-In the SingleColor component, display the hex value and weight (percent) of each color, and use inline CSS to set the background color of the component.
 
-#### React-Toastify
+## How To Use MoodifyIt 
 
-Import and set up the react-toastify library.
+There is a color-selection input and also a field that takes a `HEX` value. Either one can be use to select a color.
 
-[React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+Then, the Moodify It! button will turn into the color that the user selected. Click on it.
 
-```sh
-npm i react-toastify
-```
+The screen will display a grid of 21 different variations of the color that the user chose. Put yourself in the mind of a designer and you can see the value of such a tool! The grid will indicate what is the color that the user originally picked, and show 10 lighter tones (with the lightest being plain white) and 10 darker tones (with the darkest being black). Click on each color to copy it to your Clipboard.
 
-main.jsx
+And that's it! You have successfully 'Moodified' a color to explore the infinite paths of your own creativity (see? wording is key to convince a user to try your tool).
 
-```js
-import 'react-toastify/dist/ReactToastify.css';
-```
+Try MoodifyIt [here](https://moodifyit.netlify.app)!
 
-App.jsx
 
-```js
-import { ToastContainer, toast } from 'react-toastify';
+## Main Takeaways From The Project
 
-toast.success('awesome');
-toast.error('error message');
+Like I mentioned before, the project showcases solid React development foundations with some amazing Library integration and best file organization practices. The project is heeavily based on the tutorial by John Smilga, which can be found [here](https://www.udemy.com/course/react-tutorial-and-projects-course). 
 
-return (
-  <main>
-    ...............
-    <ToastContainer position='top-center' />
-  </main>
-);
-```
+The main takeaway that I wanted to showcase with this project is the fact that, as an engineer, the choice of solution becomes clear (and simple) when the problem is clearly understood. Made with the user in mind.
 
-#### Create Color
+## Future Upgrades
 
-In the App component, create logic to generate a new list of colors when the user submits a new color value. Use react-toastify to display an error message if the values.js library cannot generate a color, and also display a toast message if the user tries to submit an empty value.
+Since this is just a 'conceptual' project, I'm not sure how much time I will spend coming back to it, but I want to include better styling, and possibly explore the following features:
 
-#### Clipboard
+- A user-controlled range of options.
+- A section with inspiration based on the colors that the user is displaying. 
 
-In the SingleColor component, set up a click handler that saves the hex value of the color to the browser clipboard.
+And I don't think anything else would be needed. Honestly, keeping a tool as minimalist as possibly can take this fun page very far.
 
-To save some value in the navigator clipboard, you can use the Clipboard API, which is a part of the Web API provided by modern browsers. The Clipboard API allows web developers to interact with the user's clipboard, including reading and writing data to it.
 
-Here is an example of how to save a string value to the clipboard using the Clipboard API:
-
-```js
-async function copyToClipboard(text) {
-  try {
-    await navigator.clipboard.writeText(text);
-    console.log('Text copied to clipboard');
-  } catch (error) {
-    console.error('Failed to copy text: ', error);
-  }
-}
-
-const textToCopy = 'Hello, world!';
-copyToClipboard(textToCopy);
-```
-
-The flow of the application should look something like this:
-
-- Create the Form, ColorList, and SingleColor components.
-
-- In the App component, render the Form and ColorList components.
-
-- In the Form component, set up a color state value and a form with an input field. Set up a handleChange function to update the color state value and a handleSubmit function to add the color to the list.
-
-- Install the values.js library and use it to generate a list of colors in the App component. Pass the colors list to the ColorList component.
-
-- In the ColorList component, iterate over the list of colors and render each one in a SingleColor component. Fix the key problem by providing a unique id for each color.
-
-- In the SingleColor component, display the hex value and weight (percent) of each color, and use inline CSS to set the background color of the component.
-
-- Import and set up the react-toastify library. In the App component, create logic to generate a new list of colors when the user submits a new color value. Use react-toastify to display an error message if the values.js library cannot generate a color, and also display a toast message if the user tries to submit an empty value.
-
-- In the SingleColor component, set up a click handler that saves the hex value of the color to the browser clipboard.
-
-#### CSS
-
-```css
-.colors {
-  min-height: calc(100vh - 160px);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(223.33px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(96px, 1fr));
-}
-```
-
-min-height: calc(100vh - 160px); - This line sets the minimum height of the element. It uses the calc() function to subtract 160 pixels from the viewport height (100vh). The viewport height unit (vh) is relative to the height of the browser window. This means the element will take up at least the full viewport height minus 160 pixels.
-
-display: grid; - This line sets the element's display property to 'grid', enabling the use of the CSS Grid Layout module to arrange its child elements in a grid format.
-
-grid-template-columns: repeat(auto-fit, minmax(223.33px, 1fr)); - This line defines the number of columns and their width in the grid. The repeat() function is used with the auto-fit keyword, which automatically calculates the number of columns based on the container's width and the minimum and maximum column widths specified in minmax(223.33px, 1fr). The minimum width is set to 223.33 pixels, while the maximum width is set to 1 fraction (1fr) of the available space.
-
-grid-template-rows: repeat(auto-fit, minmax(96px, 1fr)); - This line defines the number of rows and their height in the grid, similar to the previous property. The repeat() function is used with the auto-fit keyword, and the minmax() function defines the minimum row height as 96 pixels and the maximum height as 1 fraction (1fr) of the available space.
