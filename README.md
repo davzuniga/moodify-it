@@ -2,7 +2,7 @@
 
 ### Can't decide on a color, or want to explore additional options as you go through mood boards in your designs? 
 
-MoodifyIt is here to help. 
+##MoodifyIt is here to help. 
 
 
 
